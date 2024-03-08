@@ -1,0 +1,8 @@
+{
+  "config": {
+    "vendor-dir": "/var/www/it.crm.profi-mo.ru/web/riobet-notification/php/vendor"
+  },
+  "require": {
+    "google/auth": "^1.26"
+  }
+}
