@@ -29,14 +29,10 @@ $registrationToken = 'elRe57LSH94:APA91bEOjGtcl8FalwTBmXfB233MpJqAOzXlgSvV1ZIBxC
 $payload = [
   "message" => [
     "notification" => [
-      "title" => "Account Deposit",
-      "body" => "A deposit to your savings account has just cleared."
+      "title" => $_POST['title'],
+      "body" => $_POST['body']
     ],
-    "data" => [
-      "account" => "Savings",
-      "balance" => "$3020.25"
-    ],
-    "token" => $registrationToken,
+    "token" => $_POST['token'],
   ],
 ];
 

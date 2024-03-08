@@ -50,6 +50,8 @@ $(function () {
 
   // отправка ID на сервер
   function sendTokenToServer(currentToken) {
+    $('#token').val(currentToken);
+
     if (!isTokenSentToServer(currentToken)) {
       console.log('Отправка токена на сервер...');
 
