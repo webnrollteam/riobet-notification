@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg__d_1920 {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(250deg, #091E0C -10.3%, #0D250F -10.3%, #041105 8.5%, #0D2610 39.89%, #0F2811 49.72%, #0E2610 60.9%, #031004 89.79%, #031104 99.08%, #021404 114.58%), #000;
+}
+
+.logo {
+  margin-top: 150px;
+  margin-bottom: 70px;
+}
+
+.please {
+  color: #FFF;
+  font-family: "Roboto Condensed";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  /* 100% */
+}
+
+.please2 {
+  color: #C0C0C0;
+  /* Desktop/H1 */
+  font-family: "Roboto Condensed";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  /* 125% */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container-logo-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  width: 30%;
+  gap: 20px;
+}
+
+.block-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-bell {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .container-bell {
+    display: none;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .container-logo-text {
+    margin: 0;
+    width: auto;
+  }
+
+  .block-logo-text, .container-logo-text {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}

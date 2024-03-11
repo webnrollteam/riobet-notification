@@ -15,13 +15,11 @@ $(function () {
       new Notification(payload.notification.title, payload.notification);
     });
 
-    if (Notification.permission === 'granted') {
-      subscribe();
-    }
+    subscribe();
 
-    $('#subscribe').on('click', function () {
-      subscribe();
-    });
+    // $('#subscribe').on('click', function () {
+    //   subscribe();
+    // });
   }
 
   function subscribe() {
@@ -64,6 +62,10 @@ $(function () {
     } else {
       console.log('Токен уже отправлен на сервер.');
     }
+
+    $('.please').html('You are already subscribed');
+    $('.please2').hide();
+
   }
 
   // используем localStorage для отметки того,
