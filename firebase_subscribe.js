@@ -1,6 +1,17 @@
 var messagingSenderId = '985618152874';
 
+var messages = {
+  ru: {
+    alreadySubscribed: 'Вы уже подписаны на уведомления'
+  },
+  en: {
+    alreadySubscribed: 'You are already subscribed'
+  }
+};
+
 $(function () {
+  var lang = $('html').attr('lang');
+  
   firebase.initializeApp({
     messagingSenderId: messagingSenderId
   });
@@ -63,7 +74,7 @@ $(function () {
       console.log('Токен уже отправлен на сервер.');
     }
 
-    $('.please').html('You are already subscribed');
+    $('.please').html(messages[lang].alreadySubscribed);
     $('.please2').hide();
 
   }

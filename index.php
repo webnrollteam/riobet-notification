@@ -1,4 +1,19 @@
-<html>
+<?php
+$userId = $_REQUEST['user_id'];
+$lang = $_REQUEST['lang'] ?? 'ru';
+
+$messages = [
+  'ru' => [
+    'please' => 'Пожалуйста нажмите кнопку "Разрешить"',
+    'please2' => 'чтобы получать уведомления о новых<br /> бонусах, акциях и турнирах.',
+  ],
+  'en' => [
+    'please' => 'Please tap the "Allow" button',
+    'please2' => 'to receive notifications about new<br /> bonuses, promotions, and tournaments.',
+  ]
+];
+?>
+<html lang="<?php echo $lang?>">
 <title></title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -122,11 +137,11 @@
           </div>
 
           <div class="please">
-            Please tap the "Allow" button
+            <?php echo $messages[$lang]['please']?>
           </div>
 
           <div class="please2">
-            to receive notifications about new<br /> bonuses, promotions, and tournaments.
+            <?php echo $messages[$lang]['please2']?>
           </div>
         </div>
       </div>
@@ -139,14 +154,14 @@
     </div>
   </div>
 
-  <!-- <p><button type="button" id="subscribe">Следить за изменениями</button></p>
+  <p><button type="button" id="subscribe">Следить за изменениями</button></p>
 
   <form action="php/index.php" method="POST" target="_blank">
     <div><input type="text" name="token" readonly id="token" /></div>
     <div><input type="text" name="title" placeholder="title"/></div>
     <div><input type="text" name="body" placeholder="body"/></div>
     <div><input type="submit" value="send"/></div>
-  </form> -->
+  </form>
 
 </body>
 
