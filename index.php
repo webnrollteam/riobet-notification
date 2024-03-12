@@ -21,6 +21,7 @@ $messages = [
 <link rel="stylesheet" href="styles.css"/>
 <script type="text/javascript" src="//code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="//www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+<script type="text/javascript" src="ubid/build/ubid-0.0.1.min.js"></script>
 <script type="text/javascript" src="firebase_subscribe.js"></script>
 
 <body>

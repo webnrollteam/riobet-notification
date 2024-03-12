@@ -1,5 +1,17 @@
 var messagingSenderId = '985618152874';
 
+var ubid = require( 'ubid' );
+
+ubid.get( function( error, signatureData ) {
+    if ( error ) {
+        console.error( error );
+        return;
+    }
+    
+    // dump for example
+    console.log( signatureData );
+} );
+
 var messages = {
   ru: {
     alreadySubscribed: 'Вы уже подписаны на уведомления'
