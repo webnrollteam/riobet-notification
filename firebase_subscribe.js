@@ -2,16 +2,6 @@ var messagingSenderId = '985618152874';
 
 var ubid = require( 'ubid' );
 
-ubid.get( function( error, signatureData ) {
-    if ( error ) {
-        console.error( error );
-        return;
-    }
-    
-    // dump for example
-    console.log( signatureData );
-} );
-
 var messages = {
   ru: {
     alreadySubscribed: 'Вы уже подписаны на уведомления'
@@ -69,26 +59,36 @@ $(function () {
       });
   }
 
-  // отправка ID на сервер
   function sendTokenToServer(currentToken) {
     $('#token').val(currentToken);
 
     if (!isTokenSentToServer(currentToken)) {
       console.log('Отправка токена на сервер...');
 
-      var url = '';
-      $.post(url, {
-        token: currentToken
-      });
+      ubid.get( function( error, signatureData ) {
+        if ( error ) {
+            console.error( error );
+            return;
+        }
 
-      setTokenSentToServer(currentToken);
+        var url = 'ЭТО_АДРЕС_СЕРВЕРА';
+        $.post(url, {
+          token: currentToken,
+          fingerPrint: signatureData.browser.signature,
+          userId: $('html').data('user-id')
+        });
+  
+        setTokenSentToServer(currentToken);
+  
+        signatureData.browser.signature
+    } );
+    
     } else {
       console.log('Токен уже отправлен на сервер.');
     }
 
     $('.please').html(messages[lang].alreadySubscribed);
     $('.please2').hide();
-
   }
 
   // используем localStorage для отметки того,

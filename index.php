@@ -13,7 +13,7 @@ $messages = [
   ]
 ];
 ?>
-<html lang="<?php echo $lang?>">
+<html lang="<?php echo $lang?>" data-user-id="<?php echo $userId?>">
 <title></title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -154,15 +154,6 @@ $messages = [
       </div>
     </div>
   </div>
-
-  <p><button type="button" id="subscribe">Следить за изменениями</button></p>
-
-  <form action="php/index.php" method="POST" target="_blank">
-    <div><input type="text" name="token" readonly id="token" /></div>
-    <div><input type="text" name="title" placeholder="title"/></div>
-    <div><input type="text" name="body" placeholder="body"/></div>
-    <div><input type="submit" value="send"/></div>
-  </form>
 
 </body>
 
